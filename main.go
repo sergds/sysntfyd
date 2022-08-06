@@ -26,12 +26,12 @@ func dispatch_notification_title(title string, body string, tags string, topic s
 
 func dispatch_error_noncritical(err string, topic string) {
 	var host, _ = os.Hostname()
-	dispatch_notification_title("Error while running sysntfyd!", err+"\nsysntfyd will still be running!", "skull,x,"+host, topic)
+	dispatch_notification_title("Ошибка sysntfyd!", err+"\nsysntfyd продолжит работу...", "skull,x,"+host, topic)
 }
 
 func dispatch_overheating(temp string, topic string) {
 	var host, _ = os.Hostname()
-	dispatch_notification_title(host+" плавится!", "Онетушитель не найдётся?\n"+"temp="+temp, "fire,skull,"+host, topic)
+	dispatch_notification_title(host+" плавится!", "Огнетушитель не найдётся?\n"+"temp="+temp, "fire,skull,"+host, topic)
 }
 
 func main() {
